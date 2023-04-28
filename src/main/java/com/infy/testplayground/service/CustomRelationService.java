@@ -30,6 +30,10 @@ public class CustomRelationService implements RelationService {
     @Override
     @Transactional
     public void createCustomRelation(RelationDto dto) {
+        if(!wordRepository.findByWord(dto.getW1()).isEmpty()
+                || !wordRepository.findByWord(dto.getW1()).isEmpty()){
+            throw new RuntimeException("Can have only one relation");
+        }
         Word word1 = wordRepository.save(new Word()
                 .setWord(dto.getW1().toLowerCase()));
         Word word2 = wordRepository.save(new Word()

@@ -4,8 +4,8 @@ POST http://localhost:8080/relations/task1
 Content-Type: application/json
 
 {
-  "w1": "test1",
-  "w2": "test2",
+  "w1": "t1",
+  "w2": "r",
   "r": "ANTONYM"
 }
 ###

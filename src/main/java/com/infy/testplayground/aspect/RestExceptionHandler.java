@@ -2,13 +2,14 @@ package com.infy.testplayground.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 @Slf4j
-//@ControllerAdvice
+@ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({ RuntimeException.class })

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface RelationRepository extends CrudRepository<Relation, Long> {
     List<Relation> findByRelation(Relation.RelationEnum relationEnum);
+
 }
