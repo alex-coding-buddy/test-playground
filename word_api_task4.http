@@ -1,0 +1,22 @@
+
+###
+POST http://localhost:8080/relations/task1
+Content-Type: application/json
+
+{
+  "w1": "test1",
+  "w2": "test2",
+  "r": "ANTONYM"
+}
+###
+POST http://localhost:8080/relations/task1
+Content-Type: application/json
+
+{
+  "w1": "smth",
+  "w2": "smth2",
+  "r": "RELATED"
+}
+###
+
+GET http://localhost:8080/relations/inverse

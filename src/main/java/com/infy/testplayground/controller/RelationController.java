@@ -1,5 +1,6 @@
 package com.infy.testplayground.controller;
 
+import com.infy.testplayground.dto.InverseDto;
 import com.infy.testplayground.dto.RelationDto;
 import com.infy.testplayground.entity.Relation;
 import com.infy.testplayground.repo.RelationRepository;
@@ -9,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+
+import static com.infy.testplayground.dto.InverseDto.Inverse.NO;
 
 @RestController
 @RequestMapping("relations")
@@ -26,5 +29,10 @@ public class RelationController extends AbstractCrudController<RelationRepositor
     @GetMapping("/filter")
     public Collection<Relation> getFiltered(@RequestParam String relationType) {
         return relationService.filterByType(Relation.RelationEnum.valueOf(relationType));
+    }
+
+    @GetMapping("/inverse")
+    public Collection<?> getInversed() {
+        return relationService.getInverse();
     }
 }
