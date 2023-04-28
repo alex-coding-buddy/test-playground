@@ -20,8 +20,13 @@ public class CustomRelationService implements RelationService {
     @Override
     @Transactional
     public void createCustomRelation(RelationDto dto) {
-        wordRepository.save(new Word().setWord(dto.getW1()));
-        wordRepository.save(new Word().setWord(dto.getW2()));
-        relationRepository.save(new Relation().setRelation(Relation.RelationEnum.valueOf(dto.getR())));
+        Word word1 = wordRepository.save(new Word()
+                .setWord(dto.getW1()));
+        Word word2 = wordRepository.save(new Word()
+                .setWord(dto.getW2()));
+        relationRepository.save(new Relation()
+                .setRelation(Relation.RelationEnum.valueOf(dto.getR()))
+                .setWord1(word1)
+                .setWord2(word2));
     }
 }

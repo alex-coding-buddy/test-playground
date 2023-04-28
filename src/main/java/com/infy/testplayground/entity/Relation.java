@@ -1,5 +1,7 @@
 package com.infy.testplayground.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -15,14 +17,16 @@ import javax.persistence.*;
 public class Relation extends H2Entity {
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "word1_id")
-    private Word word1Id;
+    private Word word1;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "word2_id")
-    private Word word2Id;
+    private Word word2;
 
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RelationEnum relation;
 
