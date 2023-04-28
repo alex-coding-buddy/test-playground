@@ -26,7 +26,7 @@ public class Relation extends H2Entity {
     @Column(nullable = false)
     private RelationEnum relation;
 
-    enum RelationEnum {
+    public enum RelationEnum {
         SYNONYM, ANTONYM, RELATED;
     }
 }

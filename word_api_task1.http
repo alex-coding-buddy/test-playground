@@ -28,3 +28,12 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8080/relations
+###
+POST http://localhost:8080/relations/task1
+Content-Type: application/json
+
+{
+  "w1": "son",
+  "w2": "daughter",
+  "r": "ANTONYM"
+}
