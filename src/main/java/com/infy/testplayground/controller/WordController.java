@@ -9,4 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("words")
 public class WordController extends AbstractCrudController<WordRepository, Word> {
 
+
+
 }

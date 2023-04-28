@@ -31,9 +31,9 @@ public class CustomRelationService implements RelationService {
     @Transactional
     public void createCustomRelation(RelationDto dto) {
         Word word1 = wordRepository.save(new Word()
-                .setWord(dto.getW1()));
+                .setWord(dto.getW1().toLowerCase()));
         Word word2 = wordRepository.save(new Word()
-                .setWord(dto.getW2()));
+                .setWord(dto.getW2().toLowerCase()));
         relationRepository.save(new Relation()
                 .setRelation(Relation.RelationEnum.valueOf(dto.getR()))
                 .setWord1(word1)
