@@ -1,0 +1,30 @@
+POST http://localhost:8080/words
+Content-Type: application/json
+
+{
+  "id": 1,
+  "word": "son"
+}
+
+###
+POST http://localhost:8080/words
+Content-Type: application/json
+
+{
+  "id": 2,
+  "word": "daughter"
+}
+
+###
+POST http://localhost:8080/relations
+Content-Type: application/json
+
+{
+  "word1Id": 1,
+  "word2Id": 2,
+  "relation": "ANTONYM"
+}
+
+###
+
+GET http://localhost:8080/relations
