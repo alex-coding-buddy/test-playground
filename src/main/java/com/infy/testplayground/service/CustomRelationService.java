@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Collection;
 
 @Service
 @RequiredArgsConstructor
@@ -28,5 +29,10 @@ public class CustomRelationService implements RelationService {
                 .setRelation(Relation.RelationEnum.valueOf(dto.getR()))
                 .setWord1(word1)
                 .setWord2(word2));
+    }
+
+    @Override
+    public Collection<Relation> filterByType(Relation.RelationEnum relationType) {
+        return relationRepository.findByRelation(relationType);
     }
 }

@@ -20,9 +20,9 @@ import java.util.Set;
 @NoArgsConstructor
 public class Word extends H2Entity {
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "relation")
-    @JsonManagedReference
-    private Set<Relation> relations;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "relation")
+//    @JsonManagedReference
+//    private Set<Relation> relations;
 
     public Word(long id) {
         super(id);
